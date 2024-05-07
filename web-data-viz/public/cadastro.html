@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>AquaTech | Cadastro</title>
+  <title>Cello Connect | Cadastro</title>
 
   <script src="./js/sessao.js"></script>
 
   <link rel="stylesheet" href="./css/estilo.css" />
-  <link rel="icon" href="./assets/icon/favicon2.ico" />
+  <link rel="icon" href="./assets/imgs/somente_logo.png" />
   <link rel="preconnect" href="https://fonts.gstatic.com" />
 </head>
 
@@ -19,7 +19,7 @@
   <!--header inicio-->
   <div class="header">
     <div class="container">
-      <h1 class="titulo">AquaTech</h1>
+      <h1 class="titulo">Cello Connect</h1>
       <ul class="navbar">
         <li>
           <a href="index.html">Inicial</a>
@@ -27,7 +27,6 @@
         <li>
           <a href="simulador.html">Simulador</a>
         </li>
-        <li>|</li>
         <li>
           <a href="login.html">Login</a>
         </li>
@@ -45,36 +44,36 @@
         <span id="mensagem_erro"></span>
       </div>
     </div>
-    <div class="container">
-      <div class="card card-cadastro">
+    <div class="container_cadastro"> 
+      <div class="card">
         <h2>Bem-vindo!</h2>
         <div class="formulario">
-          <div class="campo">
-            <span>CPF:</span>
-            <input id="cpf_input" type="text" placeholder="Seu CPF" />
-          </div>
-          <div class="campo">
-            <span>Empresa:</span>
-            <select name="empresas" id="listaEmpresas">
-              <option selected>Selecione uma empresa</option>
-            </select>
-          </div>
+
           <div class="campo">
             <span>Nome:</span>
-            <input id="nome_input" type="text" placeholder="Seu nome" />
+            <input id="nome_input" type="text" placeholder="Nome:" />
           </div>
+
+          <div class="campo">
+            <span>CPF:</span>
+            <input id="cpf_input" type="text" placeholder="CPF:" />
+          </div>
+
           <div class="campo">
             <span>E-mail:</span>
-            <input id="email_input" type="text" placeholder="meuemail@provedor.com" />
+            <input id="email_input" type="text" placeholder="Email:" />
           </div>
+
           <div class="campo">
             <span>Senha:</span>
-            <input id="senha_input" type="password" placeholder="******" />
+            <input id="senha_input" type="password" placeholder="Senha:" />
           </div>
+
           <div class="campo">
             <span>Confirmação da Senha:</span>
-            <input id="confirmacao_senha_input" type="password" placeholder="******" />
+            <input id="confirmacao_senha_input" type="password" placeholder="Senha:" />
           </div>
+
           <button class="botao" onclick="cadastrar()">Cadastrar</button>
         </div>
         <div id="div_aguardar" class="loading-div">
@@ -82,18 +81,11 @@
         </div>
 
         <div id="div_erros_login"></div>
-      </div>
-    </div>
-  </div>
+        </div>
+      
+    
 
-  <!--footer inicio-->
-  <div class="footer">
-    <div class="container">
-      <h4>Feito com amor por aluno &hearts; SPTech &copy; 2023</h4>
-      <span class="version">v1.0.0</span>
-    </div>
-  </div>
-  <!--footer fim-->
+
 </body>
 
 </html>
@@ -116,8 +108,7 @@
     var tamanho_cpf = cpfVar.length;
 
 
-    if (tamanho_cpf != 11)
-    {
+    if (tamanho_cpf != 11) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
         "O CPF deve ter 11 números!";
@@ -126,19 +117,17 @@
       return false;
     }
 
-    else if (tamanho_nome <= 1) 
-    {
+    else if (tamanho_nome <= 1) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
         "Nome inválido, adicione um nome mais longo!";
 
       finalizarAguardar();
       return false;
-      
+
     }
 
-    else if (email < 1)
-    {
+    else if (email < 1) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
         "Email inválido, adicione @ ou . no seu endereço de email!";
@@ -147,19 +136,17 @@
       return false;
     }
 
-    else if (tamanho_senha <= 6) 
-    {
+    else if (tamanho_senha <= 6) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
         "Senha inválida, Coloque uma senha mais longa!";
 
       finalizarAguardar();
       return false;
-      
+
     }
 
-    else if (confirmacaoSenhaVar != senha )
-    {
+    else if (confirmacaoSenhaVar != senha) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
         "Senha inválida, Coloque a mesma senha!";
@@ -167,7 +154,7 @@
       finalizarAguardar();
       return false;
     }
-    
+
 
 
 
