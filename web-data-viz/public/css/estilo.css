@@ -73,6 +73,7 @@ body {
   background-repeat: no-repeat;
   margin-right: 0;
   
+  
 }
 
 
@@ -167,20 +168,26 @@ body {
 }
 
 .card h2 {
-  margin: 5px;
+  /* margin: 2px; */
   font-size: 30px;
 }
 
 .formulario {
-  margin-top: 10px;
+  margin-top: -15px;
+  height: 90%;
+  width: 80%;
+  /* justify-content: space-evenly; */
+  flex-direction: column;
+}
+.formulario-login {
+  
   height: 90%;
   width: 80%;
   justify-content: space-evenly;
   flex-direction: column;
 }
-
-.formulario button {
-  margin-top: 30px;
+.formulario-login button {
+  margin-top: 20px;
   margin-left: 25%;
 }
 .formulario span {
@@ -189,8 +196,7 @@ body {
 }
 
 .formulario input {
-  border: 2px solid #434747;
-  text-align: center;
+  border: 2px solid #000000;
   border-radius: 10px;
   margin: 0;
 }
@@ -301,9 +307,8 @@ body {
 
 input {
   margin-bottom: 10px;
-  border: 2px solid #32b9cd;
+  border: 2px solid black;
   padding: 10px;
-  text-align: center;
   border-radius: 10px;
 }
 
