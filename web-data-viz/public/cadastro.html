@@ -102,7 +102,6 @@
     var emailVar = email_input.value;
     var senhaVar = senha_input.value;
     var confirmacaoSenhaVar = confirmacao_senha_input.value;
-    var empresaVar = listaEmpresas.value;
     var tamanho_nome = nomeVar.length;
     var email = emailVar.indexOf('@') && emailVar.indexOf('.');
     var tamanho_senha = senhaVar.length;
@@ -164,8 +163,7 @@
       nomeVar == "" ||
       emailVar == "" ||
       senhaVar == "" ||
-      confirmacaoSenhaVar == "" ||
-      empresaVar == ""
+      confirmacaoSenhaVar == ""
     ) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
@@ -189,8 +187,7 @@
         cpfServer: cpfVar,
         nomeServer: nomeVar,
         emailServer: emailVar,
-        senhaServer: senhaVar,
-        empresaServer: empresaVar
+        senhaServer: senhaVar
       }),
     })
       .then(function (resposta) {

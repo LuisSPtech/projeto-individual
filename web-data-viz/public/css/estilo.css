@@ -69,10 +69,11 @@ body {
 
 .banner {
   height: var(--tamanho-banner);
+  /* margin-left: 50px; */
   background-image: url('../assets/imgs/logo2.png');
   background-repeat: no-repeat;
   margin-right: 0;
-  
+  border-bottom: 2px solid #000000;
   
 }
 
@@ -82,10 +83,35 @@ body {
 
 .conteudo1
 {
-  margin-top: 10vh;
-  width: 50%;
+  /* padding-top: 10%; */
+  display: flex;
+  width: 100%;
+  height: 50%;
+  
 }
 
+.text{
+  position: ;
+}
+
+.card-informacao1{
+  margin-top: 200px;
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  height: 500px;
+  background-color: #a09494;
+  margin-left: 20px;
+  border-radius: 10px;
+  align-items: center;
+  
+}
+
+.card-informacao1 img{
+  width: 350px;
+  height: 300px;
+
+}
 
 /* MISSÃO VISÃO VALORES */
 
@@ -121,22 +147,8 @@ body {
 
 /* FOOTER */
 
-.footer {
-  background-color: #32b9cd;
-  height: 150px;
-  color: #fff;
-  display: flex;
-  font-size: 15px;
-}
 
-.footer .container {
-  justify-content: center;
-  text-align: center;
-}
 
-.footer .container .version {
-  font-size: 12px;
-}
 
 /* LOGIN */
 
@@ -247,6 +259,31 @@ body {
   display: none
 }
 
+/*SOBRE MIM*/
+
+.container-sobremim{
+ 
+  
+  
+}
+
+
+
+.titulo1-sobremim{
+  font-weight: bold;
+  font-size: 15px;
+  margin-left: 10px;
+  /* margin-top: 5vh; */
+  
+}
+
+
+
+
+
+
+
+
 /* FORMULARIO */
 
 .alerta_erro{
@@ -337,17 +374,7 @@ input {
   width: 50px;
 }
 
-/* SIMULADOR */
 
-.simulador {
-  color: white;
-}
-
-.simulador .container {
-  flex-direction: column;
-  overflow: scroll; 
-  height: var(--tamanho-simulador);
-}
 
 /* ALERTA */
 
