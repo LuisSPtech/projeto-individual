@@ -73,6 +73,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   margin-right: 0;
+  opacity: 50%;
   /* border-bottom: 2px solid #000000; */
   
 }
@@ -102,13 +103,17 @@ body {
   margin-top: 50px;
   display: flex;
   flex-direction: column;
-  width: 30%;
+  width: 25%;
   height: 500px;
   border-radius: 10px;
   align-items: center; 
   border: 2px solid black;   
 }
-
+.card-informacao1:hover
+{
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px;
+}
 .card-informacao1 p{
   margin-top: 10px;
 margin-left: 10px;
@@ -116,8 +121,8 @@ margin-left: 10px;
 
 .card-informacao1 img{
   margin-top: -10px;
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
 
 }
 
