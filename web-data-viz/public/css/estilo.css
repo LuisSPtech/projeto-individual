@@ -281,7 +281,7 @@ margin-left: 10px;
   top: 63px;
   left: 0;
   width: 100%;
-  height: 200%;
+  height: 500%;
   background-image: url('../assets/imgs/somente_logo.png');
   /* background-size: cover; */
   background-position: center;
@@ -294,7 +294,7 @@ margin-top: 15px;
 background-color:#d4d8db;
 margin-left: 100px;
 width: 85%;
-height: 1000px;
+height: 3000px;
 border-radius: 20px;
 border: 2px solid black;
 }
@@ -308,18 +308,81 @@ border: 2px solid black;
   width:400px;
   height:500px;
   margin-top: 50px;
-  margin-left: 90px;
+  margin-left: 100px;
   border-radius: 5px;
   border: 2px solid black;
 }
+.foto2 img{
+  width:400px;
+  height: 400px;
+  margin-top: 50px;
+  margin-left: 50px;
+  border-radius: 5px;
+  border: 2px solid black;
+}
+
+.texto2-sobremim  {
+  width: 42%;
+  display: flex;
+ margin-left: 100px;
+  margin-top: -935px;
+  font-family:  'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;;
+}
+.h1-sobremim2 {
+  margin-top: 100px;
+ margin-left: -500px;
+  justify-content: center;
+  display: flex;
+}
+
+.h1-sonhos{
+  margin-top: 100px;
+}
+
+#sonhos_e_conquistas {
+  width: 570px;
+  height: 400px;
+  margin-left: 80px;
+  border-radius: 5px;
+  border: 2px solid black;
+  margin-top: 500px;
+  
+}
+
+#sonhos_e_conquistas2 {
+  width: 300px;
+  height: 400px;
+  margin-top: -100px;
+  border-radius: 5px;
+  border: 2px solid black;
+}
+
+#orquestra3 {
+margin-left: 20px;
+width: 350px;
+height: 450px;
+}
+#orquestra4 {
+  margin-left: 390px;
+  width: 350px;
+  height: 450px;
+  }
+
+.texto-sonhos {
+  width: 30%;
+  margin-left: 400px;
+  margin-top: -450px;
+  font-family:  'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;;
+}
+
 .conteudo-container{
   display: flex;
 }
 .texto-sobremim 
 {
  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
- width: 50%; 
- margin-left:550px;
+ width: 40%; 
+ margin-left:600px;
  position: relative;
  top: -530px;
 }
