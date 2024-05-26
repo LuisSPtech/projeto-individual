@@ -72,15 +72,37 @@ body {
   background-image: url('../assets/imgs/logo2.png');
   background-position: center;
   background-repeat: no-repeat;
-  margin-right: 0;
-  opacity: 50%;
-  /* border-bottom: 2px solid #000000; */
-  
+  margin-left: 75px;
+  margin-top: 60px;
+  width: 500px;
+  border-radius: 10px;
+  border: 2px solid black;
 }
 
 
 
 /*CONTEÚDO DA HOME*/
+
+.background2{
+  top: 63px;
+  position: absolute;
+  width: 100%;
+  height: 500%;
+  background-image: url('../assets/imgs/somente_logo.png');
+  /* background-size: cover; */
+  background-position: center;
+  z-index: -2;
+}
+
+.container-sobremim2{
+  margin-top: 15px;
+  background-color:#d4d8db;
+  margin-left: 100px;
+  width: 85%;
+  height: 3000px;
+  border-radius: 20px;
+  border: 2px solid black;
+  }
 
 .conteudo1
 {
@@ -96,6 +118,7 @@ body {
   text-align: center;  
 }
 .cards{
+  background-color: #d4d8db;
   display: flex;
   justify-content: space-around;
 }
@@ -121,8 +144,8 @@ margin-left: 10px;
 
 .card-informacao1 img{
   margin-top: -10px;
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
 
 }
 
