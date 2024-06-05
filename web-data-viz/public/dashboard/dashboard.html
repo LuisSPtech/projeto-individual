@@ -2,11 +2,11 @@
 <html lang="pt-br">
 
 <head>
-    <link rel="shortcut icon" href="../assets/icon/favicon2.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/imgs/somente_logo.png" type="image/x-icon">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AquaTech | Dashboards</title>
+    <title>Cello Connect | Quizz</title>
 
     
     <link rel="stylesheet" href="./../css/dashboards.css">
@@ -24,6 +24,17 @@
 
     <!--FONT AWESOME-->
     <script src="https://kit.fontawesome.com/9f7414eb10.js" crossorigin="anonymous"></script>
+    <title>Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url(../assets/imgs/somente_logo.png);
+            margin: 0;
+            padding: 0;
+        }
+        
+       
+    </style>
 </head>
 
 <!-- <body onload=" atualizarFeed()"> -->
@@ -32,7 +43,7 @@
 
     <div class="janela">
         <div class="header-left">
-            <h1>AquaTech</h1>
+            <h1>CelloConnect</h1>
 
             <div class="hello">
                 <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
@@ -66,258 +77,162 @@
 
         </div>
 
-        <div class="dash">
-            <div id="alerta">
+
+
+
+        <div class="quiz-container">
+            <h2>Conhecimentos básicos de Violoncelo</h2>
+    <br>
+            <div class="questao" data-correct="c">
+            <p>1. Qual é o instrumento musical que pertence à família das cordasfriccionadas?</p>
+            <label><input type="radio" name="questao1" value="a">A) Piano</label><br>
+            <label><input type="radio" name="questao1" value="b">B) Violão</label><br>
+            <label><input type="radio" name="questao1" value="c">C) Violoncelo<label><br>
+            <label><input type="radio" name="questao1" value="d">D) Flauta</label>
+            </div>
+    <br>
+            <div class="question" data-correct="a">
+                <p>2. Quantas cordas tem um violoncelo?</p>
+                <label><input type="radio" name="questao2" value="a">A) 4</label><br>
+                <label><input type="radio" name="questao2" value="b">B) 5</label><br>
+                <label><input type="radio" name="questao2" value="c">C) 6</label><br>
+                <label><input type="radio" name="questao2" value="d">D) 3</label>
+            </div>
+            <br>
+            <div class="question" data-correct="d">
+                <p>3. Qual é o nome da peça de metal ou fibra onde o violoncelista apoia o instrumento enquanto toca?</p>
+                <label><input type="radio" name="questao3" value= "a">A) Apoio</label><br>
+                <label><input type="radio" name="questao3" value= "b">B) Descanso</label><br>
+                <label><input type="radio" name="questao3" value= "c">C) Estribo</label><br>
+                <label><input type="radio" name="questao3" value= "d">D) Espigão</label>
+            </div>
+            <br>
+            <div class="question" data-correct="a">
+                <p>4. Qual é o intervalo de afinação padrão das cordas de um violoncelo?</p>
+                <label><input type="radio" name="questao4" value="a">A) Dó - Sol - Ré - Lá</label><br>
+                <label><input type="radio" name="questao4" value="b">B) Ré - Sol - Dó - Fá</label><br>
+                <label><input type="radio" name="questao4" value="c">C) Sol - Ré - Lá - Mi</label><br>
+                <label><input type="radio" name="questao4" value="d">D) Lá - Mi - Si - Fá</label>
+            </div>
+            <br>
+            <div class="question" data-correct="b">
+                <p>5. Qual é a posição padrão de segurar o violoncelo enquanto tocando?</p>
+                <label><input type="radio" name="questao5" value="a">A) De pé com o violoncelo em um suporte</label><br>
+                <label><input type="radio" name="questao5" value="b">B) Sentado com o violoncelo entre as pernas</label><br>
+                <label><input type="radio" name="questao5" value="c">C) Segurando o violoncelo como uma guitarra</label><br>
+                <label><input type="radio" name="questao5" value="d">D) Balançando o violoncelo no ar</label>
+            </div>
+            <br>
+            <div class="question" data-correct="c">
+                <p>6. Quem é amplamente considerado como um dos maiores violoncelistas da história da música clássica?</p>
+                <label><input type="radio" name="questao6" value="a">A) Johann Sebastian Bach</label><br>
+                <label><input type="radio" name="questao6" value="b">B) Ludwig van Beethoven</label><br>
+                <label><input type="radio" name="questao6" value="c">C) Yo-Yo Ma</label><br>
+                <label><input type="radio" name="questao6" value="d">D) Wolfgang Amadeus Mozart</label>
+            </div>
+            <br>
+            <div class="question" data-correct="d">
+                <p>7. Qual é a técnica usada para produzir um som mais suave no violoncelo, geralmente indicada por tocar as cordas com os dedos?</p>
+                <label><input type="radio" name="questao7" value="a">A) Legato</label><br>
+                <label><input type="radio" name="questao7" value="b">B) Arco</label><br>
+                <label><input type="radio" name="questao7" value="c">C) Staccato</label><br>
+                <label><input type="radio" name="questao7" value="d">D) Pizzicato</label>
+            </div>
+            <br>
+            <div class="question" data-correct="b">
+                <p>8. Quem é considerado um dos compositores mais famosos de peças para violoncelo?</p>
+                <label><input type="radio" name="questao8" value="a">A) Wolfgang Amadeus Mozart </label><br>
+                <label><input type="radio" name="questao8" value="b">B) Johann Sebastian Bach</label><br>
+                <label><input type="radio" name="questao8" value="c">C) Ludwig van Beethoven</label><br>
+                <label><input type="radio" name="questao8" value="d">D) Frédéric Chopin</label>
             </div>
 
-            <div class="btns-dash" id="btnAquario">
-                <!-- O gráfico é chamado de acordo com o id (fk_aquario) do banco  -->
-            </div>
-            <div id="graficos">
-            </div>
+            <button onclick="analisarQuiz()">Enviar</button>
+    
+            <div id="div_mensagem"></div>
         </div>
-    </div>
 
 
 </body>
-
 </html>
 
 <script>
-    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
-    b_cpf.innerHTML = sessionStorage.CPF_USUARIO;
+    function analisarQuiz() {
+            var divMensagem = document.getElementById('div_mensagem');
+            var quizContainer = document.querySelector('.quiz-container');
 
-    let proximaAtualizacao;
+            var questao1 = document.querySelector('[name="questao1"]:checked');
+            var questao2 = document.querySelector('[name="questao2"]:checked');
+            var questao3 = document.querySelector('[name="questao3"]:checked');
+            var questao4 = document.querySelector('[name="questao4"]:checked');
+            var questao5 = document.querySelector('[name="questao5"]:checked');
+            var questao6 = document.querySelector('[name="questao6"]:checked');
+            var questao7 = document.querySelector('[name="questao7"]:checked');
+            var questao8 = document.querySelector('[name="questao8"]:checked');
 
-    window.onload = exibirAquariosDoUsuario();
-
-    function exibirAquariosDoUsuario() {
-        var aquarios = JSON.parse(sessionStorage.AQUARIOS);
-        aquarios.forEach(item => {
-            document.getElementById("btnAquario").innerHTML += `
-            <button class="btn-chart" onclick="exibirAquario(${item.id})" id="btnAquario${item.id}">${item.descricao}</button>
-            `
-
-            document.getElementById("graficos").innerHTML += `
-                <div id="grafico${item.id}" class="display-none">
-                    <h3 class="tituloGraficos">
-                        <span id="tituloAquario${item.id}">${item.descricao}</span>
-                    </h3>
-                    <div class="graph">
-                        <canvas id="myChartCanvas${item.id}"></canvas>
-                    </div>
-                    <div class="label-captura">
-                        <p id="avisoCaptura${item.id}" style="color: white"></p>
-                    </div>
-                </div>
-            `
-
-            obterDadosGrafico(item.id)
-        });
-
-        if (aquarios.length > 0) {
-            exibirAquario(aquarios[0].id)
-        }
-    }
-
-    function alterarTitulo(idAquario) {
-        var tituloAquario = document.getElementById(`tituloAquario${idAquario}`)
-        var descricao = JSON.parse(sessionStorage.AQUARIOS).find(item => item.id == idAquario).descricao;
-        tituloAquario.innerHTML = "Últimas medidas de Temperatura e Umidade do <span style='color: #e6005a'>" + descricao + "</span>"
-    }
-
-    function exibirAquario(idAquario) {
-        let todosOsGraficos = JSON.parse(sessionStorage.AQUARIOS);
-
-        for (i = 0; i < todosOsGraficos.length; i++) {
-            // exibindo - ou não - o gráfico
-            if (todosOsGraficos[i].id != idAquario) {
-                let elementoAtual = document.getElementById(`grafico${todosOsGraficos[i].id}`)
-                if (elementoAtual.classList.contains("display-block")) {
-                    elementoAtual.classList.remove("display-block")
-                }
-                elementoAtual.classList.add("display-none")
-
-                // alterando estilo do botão
-                let btnAtual = document.getElementById(`btnAquario${todosOsGraficos[i].id}`)
-                if (btnAtual.classList.contains("btn-pink")) {
-                    btnAtual.classList.remove("btn-pink")
-                }
-                btnAtual.classList.add("btn-white")
-            }
-        }
-
-        // exibindo - ou não - o gráfico
-        let graficoExibir = document.getElementById(`grafico${idAquario}`)
-        graficoExibir.classList.remove("display-none")
-        graficoExibir.classList.add("display-block")
-
-        // alterando estilo do botão
-        let btnExibir = document.getElementById(`btnAquario${idAquario}`)
-        btnExibir.classList.remove("btn-white")
-        btnExibir.classList.add("btn-pink")
-    }
-
-    // O gráfico é construído com três funções:
-    // 1. obterDadosGrafico -> Traz dados do Banco de Dados para montar o gráfico da primeira vez
-    // 2. plotarGrafico -> Monta o gráfico com os dados trazidos e exibe em tela
-    // 3. atualizarGrafico -> Atualiza o gráfico, trazendo novamente dados do Banco
-
-    // Esta função *obterDadosGrafico* busca os últimos dados inseridos em tabela de medidas.
-    // para, quando carregar o gráfico da primeira vez, já trazer com vários dados.
-    // A função *obterDadosGrafico* também invoca a função *plotarGrafico*
-
-    //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
-    //     Para ajustar o "select", ajuste o comando sql em src/models
-    function obterDadosGrafico(idAquario) {
-
-        alterarTitulo(idAquario)
-
-        if (proximaAtualizacao != undefined) {
-            clearTimeout(proximaAtualizacao);
-        }
-
-        fetch(`/medidas/ultimas/${idAquario}`, { cache: 'no-store' }).then(function (response) {
-            if (response.ok) {
-                response.json().then(function (resposta) {
-                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-                    resposta.reverse();
-
-                    plotarGrafico(resposta, idAquario);
-
-                });
-            } else {
-                console.error('Nenhum dado encontrado ou erro na API');
-            }
-        })
-            .catch(function (error) {
-                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-            });
-    }
-
-    // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
-    // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
-    // A função *plotarGrafico* também invoca a função *atualizarGrafico*
-    function plotarGrafico(resposta, idAquario) {
-
-        console.log('iniciando plotagem do gráfico...');
-
-        // Criando estrutura para plotar gráfico - labels
-        let labels = [];
-
-        // Criando estrutura para plotar gráfico - dados
-        let dados = {
-            labels: labels,
-            datasets: [{
-                label: 'Umidade',
-                data: [],
-                fill: false,
-                borderColor: 'rgb(75, 192, 192)',
-                tension: 0.1
-            },
+            if(questao1 == null || questao2 == null || questao3 == null || questao4 == null || questao5 == null || questao6 == null || questao7 == null || questao8 == null)
             {
-                label: 'Temperatura',
-                data: [],
-                fill: false,
-                borderColor: 'rgb(199, 52, 52)',
-                tension: 0.1
-            }]
-        };
-
-        console.log('----------------------------------------------')
-        console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
-        console.log(resposta)
-
-        // Inserindo valores recebidos em estrutura para plotar o gráfico
-        for (i = 0; i < resposta.length; i++) {
-            var registro = resposta[i];
-            labels.push(registro.momento_grafico);
-            dados.datasets[0].data.push(registro.umidade);
-            dados.datasets[1].data.push(registro.temperatura);
-        }
-
-        console.log('----------------------------------------------')
-        console.log('O gráfico será plotado com os respectivos valores:')
-        console.log('Labels:')
-        console.log(labels)
-        console.log('Dados:')
-        console.log(dados.datasets)
-        console.log('----------------------------------------------')
-
-        // Criando estrutura para plotar gráfico - config
-        const config = {
-            type: 'line',
-            data: dados,
-        };
-
-        // Adicionando gráfico criado em div na tela
-        let myChart = new Chart(
-            document.getElementById(`myChartCanvas${idAquario}`),
-            config
-        );
-
-        setTimeout(() => atualizarGrafico(idAquario, dados, myChart), 2000);
-    }
-
-
-    // Esta função *atualizarGrafico* atualiza o gráfico que foi renderizado na página,
-    // buscando a última medida inserida em tabela contendo as capturas, 
-
-    //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
-    //     Para ajustar o "select", ajuste o comando sql em src/models
-    function atualizarGrafico(idAquario, dados, myChart) {
-
-
-
-        fetch(`/medidas/tempo-real/${idAquario}`, { cache: 'no-store' }).then(function (response) {
-            if (response.ok) {
-                response.json().then(function (novoRegistro) {
-
-                    obterdados(idAquario);
-                    // alertar(novoRegistro, idAquario);
-                    console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
-                    console.log(`Dados atuais do gráfico:`);
-                    console.log(dados);
-
-                    let avisoCaptura = document.getElementById(`avisoCaptura${idAquario}`)
-                    avisoCaptura.innerHTML = ""
-
-
-                    if (novoRegistro[0].momento_grafico == dados.labels[dados.labels.length - 1]) {
-                        console.log("---------------------------------------------------------------")
-                        console.log("Como não há dados novos para captura, o gráfico não atualizará.")
-                        avisoCaptura.innerHTML = "<i class='fa-solid fa-triangle-exclamation'></i> Foi trazido o dado mais atual capturado pelo sensor. <br> Como não há dados novos a exibir, o gráfico não atualizará."
-                        console.log("Horário do novo dado capturado:")
-                        console.log(novoRegistro[0].momento_grafico)
-                        console.log("Horário do último dado capturado:")
-                        console.log(dados.labels[dados.labels.length - 1])
-                        console.log("---------------------------------------------------------------")
-                    } else {
-                        // tirando e colocando valores no gráfico
-                        dados.labels.shift(); // apagar o primeiro
-                        dados.labels.push(novoRegistro[0].momento_grafico); // incluir um novo momento
-
-                        dados.datasets[0].data.shift();  // apagar o primeiro de umidade
-                        dados.datasets[0].data.push(novoRegistro[0].umidade); // incluir uma nova medida de umidade
-
-                        dados.datasets[1].data.shift();  // apagar o primeiro de temperatura
-                        dados.datasets[1].data.push(novoRegistro[0].temperatura); // incluir uma nova medida de temperatura
-
-                        myChart.update();
-                    }
-
-                    // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-                    proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados, myChart), 2000);
-                });
-            } else {
-                console.error('Nenhum dado encontrado ou erro na API');
-                // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-                proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados, myChart), 2000);
+                alert(`Você precisa selecionar todos os campos!!`)
             }
-        })
-            .catch(function (error) {
-                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-            });
+            else{
+            var pontuacao = 0;
+            var resultado = [];
+            div_mensagem.innerHTML = '';
+            if (questao1 && questao1.value == 'c') {
+                pontuacao++;
+                resultado.push('1ª pergunta: <span class="correct-answer">Correta</span>');
+            } else {
+                resultado.push('1ª pergunta: <span class="incorrect-answer">Incorreta</span>');
+            }
 
-    }
+            if (questao2 && questao2.value === 'a') {
+                pontuacao++;
+                resultado.push('2ª pergunta: <span class="correct-answer">Correta</span>');
+            } else {
+                resultado.push('2ª pergunta: <span class="incorrect-answer">Incorreta</span>');
+            }
+
+            if (questao3 && questao3.value === 'd') {
+                pontuacao++;
+                resultado.push('3ª pergunta: <span class="correct-answer">Correta</span>');
+            } else {
+                resultado.push('3ª pergunta: <span class="incorrect-answer">Incorreta</span>');
+            }
+            if (questao4 && questao4.value == 'a') {
+                pontuacao++;
+                resultado.push('4ª pergunta: <span class="correct-answer">Correta</span>');
+            } else {
+                resultado.push('4ª pergunta: <span class="incorrect-answer">Incorreta</span>');
+            }
+            if (questao5 && questao5.value == 'b') {
+                pontuacao++;
+                resultado.push('5ª pergunta: <span class="correct-answer">Correta</span>');
+            } else {
+                resultado.push('5ª pergunta: <span class="incorrect-answer">Incorreta</span>');
+            }
+            if (questao6 && questao6.value == 'c') {
+                pontuacao++;
+                resultado.push('6ª pergunta: <span class="correct-answer">Correta</span>');
+            } else {
+                resultado.push('6ª pergunta: <span class="incorrect-answer">Incorreta</span>');
+            }
+            if (questao7 && questao7.value == 'd') {
+                pontuacao++;
+                resultado.push('7ª pergunta: <span class="correct-answer">Correta</span>');
+            } else {
+                resultado.push('7ª pergunta: <span class="incorrect-answer">Incorreta</span>');
+            }
+            if (questao8 && questao8.value == 'b') {
+                pontuacao++;
+                resultado.push('8ª pergunta: <span class="correct-answer">Correta</span>');
+            } else {
+                resultado.push('8ª pergunta: <span class="incorrect-answer">Incorreta</span>');
+            }
+
+            // quizContainer.style.display = "none";
+            divMensagem.style.display = "block";
+            divMensagem.innerHTML = `<h3>Resultado:</h3>Você acertou ${pontuacao} de 8 <br><br>
+            ${resultado.join('<br> <br>')} `;
+        }
+        }
 </script>
