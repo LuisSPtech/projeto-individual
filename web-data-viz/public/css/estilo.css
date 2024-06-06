@@ -630,6 +630,7 @@ input {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(231, 25, 152, 0.1);
+  border: #000000 3px solid;
 }
 
 .quiz-container button{
@@ -702,6 +703,46 @@ h2 {
   background-image: url('https://cdn-icons-png.flaticon.com/512/1157/1157000.png');
   background-size: cover;
   animation-iteration-count: infinite;
+}
+
+.fundo-aula {
+  background-image: url(../assets/imgs/somente_logo.png);
+  width: 100%;
+  height: 150vh;
+  position:absolute;
+}
+.fundo-aula .container-aula  {
+  margin-top: 20px;
+  margin-left:445px;
+  background-color: #d4d8db;
+  width: 900px;
+  height: 800px;
+  border-radius: 10px;
+  border: #000000 2px solid;
+}
+.container-aula h1{
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.aula1{
+  border: #000000 3px solid;
+  border-radius: 20px;
+  width: 90%;
+  height: 45%;
+  margin-left: 45px;
+}
+.aula1 iframe {
+  padding-top: 20px;
+  margin-left:30px;
+}
+.aula1 p {
+  width: 50%;
+  margin-left: 390px;
+  margin-top: -200px;
+  text-align: justify;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 @keyframes bell {

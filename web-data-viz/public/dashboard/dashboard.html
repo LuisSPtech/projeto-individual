@@ -43,23 +43,18 @@
         <div class="header-left">
             <h1>CelloConnect</h1>
 
-            <div class="hello">
-                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
-            </div>
-            <div class="hello">
-                <h3>CPF: <span id="b_cpf">CPF</span>!</h3>
-            </div>
+           
 
 
             <div class="btn-nav-white">
                 <a href="./cards.html">
-                    <h3>Aquários</h3>
+                    <h3>Gráficos</h3>
                 </a>
             </div>
 
             <div class="btn-nav">
 
-                <h3>Gráficos</h3>
+                <h3>Quiz</h3>
 
             </div>
 
@@ -173,7 +168,7 @@
     function analisarQuiz() {
         var divMensagem = document.getElementById('div_mensagem');
         var quizContainer = document.querySelector('.quiz-container');
-
+       
         var questao1 = document.querySelector('[name="questao1"]:checked');
         var questao2 = document.querySelector('[name="questao2"]:checked');
         var questao3 = document.querySelector('[name="questao3"]:checked');
@@ -241,11 +236,29 @@
             } else {
                 resultado.push('8ª pergunta: <span class="incorrect-answer">Incorreta</span>');
             }
-
+            
             // quizContainer.style.display = "none";
             divMensagem.style.display = "block";
             divMensagem.innerHTML = `<h3>Resultado:</h3>Você acertou ${pontuacao} de 8 <br><br>
             ${resultado.join('<br> <br>')} `;
         }
+        var incorretas = 8 - pontuacao;
+        
+        fetch('/usuarios/analisarQuiz', 
+            {method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                idUsuarioServer: sessionStorage.ID_USUARIO,
+                respostasCorretasServer: pontuacao,
+                respostasIncorretas: incorretas
+            })
+            }
+        )
+
+
+
+
     }
 </script>

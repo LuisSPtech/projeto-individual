@@ -22,23 +22,6 @@ senha varchar(20)
 create table formulario
 (
 idFormulario int primary key auto_increment,
-nomeFormulario varchar(100),
-dtCriacao date
-);
-
-create table resposta
-(
-idResposta int,
-fkFormulario int,
-fkUsuario int,
-resposta1 char(1),
-resposta2 char(1),
-resposta3 char(1),
-resposta4 char(1),
-resposta5 char(1),
-resposta6 char(1),
-resposta7 char(1),
-constraint pkResposta primary key (fkFormulario, fkUsuario, idResposta),
-constraint fkFormularioResposta foreign key (fkFormulario) references formulario(idFormulario),
-constraint fkUsuarioResposta foreign key (fkUsuario) references usuario(idUsuario) 
+respostaCorreta int,
+respostaIncorreta int
 );
