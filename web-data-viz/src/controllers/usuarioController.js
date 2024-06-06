@@ -25,22 +25,7 @@ function autenticar(req, res) {
                     if (resultadoAutenticar.length == 1) {
                         console.log(resultadoAutenticar);
 
-                        // aquarioModel.buscarAquariosPorEmpresa(resultadoAutenticar[0].empresaId)
-                        //     .then((resultadoAquarios) => {
-                        //         if (resultadoAquarios.length > 0) {
-                        //             res.json({
-                        //                 idUsuario: resultadoAutenticar[0].idUsuario,                                        
-                        //                 nome: resultadoAutenticar[0].nome,
-                        //                 cpf: resultadoAutenticar[0].cpf,
-                        //                 email: resultadoAutenticar[0].email,
-                        //                 senha: resultadoAutenticar[0].senha,                                       
-
-                        //                 aquarios: resultadoAquarios
-                        //             });
-                        //         } else {
-                        //             res.status(204).json({ aquarios: [] });
-                        //         }
-                        //     })
+                      
                         res.status(200).json({
                             idUsuario: resultadoAutenticar[0].idUsuario,
                             nome: resultadoAutenticar[0].nome,
@@ -109,7 +94,7 @@ function analisarQuiz(req, res){
     var pontuacao = req.body.respostasCorretasServer;
     var incorretas = req.body.respostasIncorretasServer;
 
-    usuarioModel.analisarQuiz( idUsuario, pontuacao, incorretas)
+    usuarioModel.analisarQuiz(pontuacao, incorretas,  idUsuario)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -126,8 +111,41 @@ function analisarQuiz(req, res){
             );
 
 }
+
+function dadosQuiz(req, res) {
+    var idUsuario = req.body.idUsuarioServer;
+
+    usuarioModel.dadosQuiz(idUsuario).then(function (resultado) {
+        if (resultado.length > 0) {
+            res.status(200).json(resultado);
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!");
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+        console.log("Houve um erro ao buscar.", erro.sqlMessage);
+        res.status(500).json(erro.sqlMessage);
+    });
+}
+function graficoQuiz(req, res) {
+    usuarioModel.graficoQuiz(idUsuario).then(function (resultado) {
+        var idUsuario = req.body.idUsuarioServer;
+        if (resultado.length > 0) {
+            res.status(200).json(resultado);
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!");
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+        console.log("Houve um erro ao buscar as ultimas medidas.", erro.sqlMessage);
+        res.status(500).json(erro.sqlMessage);
+    });
+}
+
 module.exports = {
     autenticar,
     cadastrar,
-    analisarQuiz
+    analisarQuiz,
+    dadosQuiz,
+    graficoQuiz
 }

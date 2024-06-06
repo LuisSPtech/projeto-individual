@@ -14,5 +14,11 @@ router.post("/autenticar", function (req, res) {
 router.post("/analisarQuiz", function (req, res) {
     usuarioController.analisarQuiz(req, res);
 });
+router.post("/dadosQuiz", function (req, res) {
+    usuarioController.dadosQuiz(req, res);
+});
+router.get("/graficoQuiz", function (req, res) {
+    usuarioController.graficoQuiz(req, res);
+});
 
 module.exports = router;

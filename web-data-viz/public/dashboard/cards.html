@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AquaTech | Tempo Real</title>
+    <title>Cello Connect | Gráficos</title>
 
 
     <link rel="stylesheet" href="./../css/dashboards.css">
@@ -14,13 +14,17 @@
 
     <script src="../js/sessao.js"></script>
     <script src="../js/alerta.js"></script>
+    <link rel="icon" href="./assets/imgs/somente_logo.png">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  
 </head>
 
-<body onload="validarSessao(), exibirAquarios(),  atualizacaoPeriodica()">
+<body onload=" exibirQuiz()">
 
     <div class="janela">
 
@@ -28,7 +32,7 @@
 
             <h1>CelloConnect</h1>
 
-            
+
 
 
             <div class="btn-nav">
@@ -54,39 +58,13 @@
         </div>
 
         <div class="dash">
-            <div id="alerta">
-            </div>
-            <div class="area-parametros-alerta">
-                <p class="titulo-legenda">
-                    Legenda - Parâmetros para Alertas
-                </p>
-                <div class="parametros-alerta">
-                    <div class="item-regua perigo-frio">
-                        <p>Perigo</p>
-                        <p>&lt;=5°C</p>
-                    </div>
-                    <div class="item-regua alerta-frio">
-                        <p>Alerta</p>
-                        <p>&lt;=10°C</p>
-                    </div>
-                    <div class="item-regua ideal">
-                        <p>Ideal</p>
-                        <p>20°C</p>
-                    </div>
-                    <div class="item-regua alerta-quente">
-                        <p>Alerta</p>
-                        <p>&gt;=22°C</p>
-                    </div>
-                    <div class="item-regua perigo-quente">
-                        <p>Perigo</p>
-                        <p>&gt;=23°C</p>
-                    </div>
-                </div>
-            </div>
 
-            <div class="cards" id="cardAquarios">
+            <div id="graficos">
+
 
             </div>
+
+
 
         </div>
 
@@ -96,23 +74,82 @@
 
 <script>
 
-    function exibirAquarios() {
-        JSON.parse(sessionStorage.AQUARIOS).forEach(item => {
-            document.getElementById("cardAquarios").innerHTML += `
-                    <div class="card-aquario">
-                        <div class="title-aquario">
-                            <h1>${item.descricao}</h1>
-                        </div>
-                        <div class="desc-aquario">
-                        <div class="temperatura">
-                            <p id="temp_aquario_${item.id}">-°C</p>
-                        </div>
-                        <div class="cor-alerta" id="card_${item.id}"></div>
-                    </div>
-                    </div>
-                    `
-        });
-        
+    function exibirQuiz() {
+
+        document.getElementById("graficos").innerHTML += `
+                    <div id="graficos">
+            <h3 class="tituloGraficos">
+                <span id="tituloGrafico" style="color: white;">Resultados do seu quiz mais recente</span>
+            </h3>
+            <div class="graph">
+                <canvas id="myChartCanvas"></canvas>
+            </div>
+        </div>
+                `
+        obterDadoGrafico();  
+    }
+    function obterDadoGrafico(){
+        console.log(sessionStorage.ID_USUARIO)
+        fetch("/usuarios/dadosQuiz/", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            cache: 'no-store',
+            body: JSON.stringify({
+                idUsuarioServer: sessionStorage.ID_USUARIO
+            })
+        }).then(function (response) {
+            console.log(response);
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    plotarGrafico(resposta);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados para o gráfico: ${error.message}`);
+            });
+    }
+
+    function plotarGrafico(resposta) {
+        console.log('Iniciando plotagem do gráfico...');
+
+        let labels = [""];
+
+        let dados = {
+            labels: labels,
+            datasets: [{
+                label: 'Acertos',
+                data: [resposta[0].respostaCorreta],
+                backgroundColor: 'green',
+                borderColor: 'green',
+                borderWidth: 1
+            },
+            {
+                label: 'Erros',
+                data: [resposta[0].respostaIncorreta],
+                backgroundColor: 'red',
+                borderColor: 'red',
+                borderWidth: 1
+            }]
+        };
+
+        // Configuração do gráfico
+        const config = {
+            type: 'bar',
+            data: dados,
+        };
+
+        // Adicionando gráfico criado em div na tela
+        let myChart = new Chart(
+            document.getElementById(`myChartCanvas`),
+            config
+        );
+
     }
 
 </script>

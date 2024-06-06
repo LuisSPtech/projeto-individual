@@ -177,7 +177,7 @@
         var questao6 = document.querySelector('[name="questao6"]:checked');
         var questao7 = document.querySelector('[name="questao7"]:checked');
         var questao8 = document.querySelector('[name="questao8"]:checked');
-
+        const qtd_questao = Number(8);
         if (questao1 == null || questao2 == null || questao3 == null || questao4 == null || questao5 == null || questao6 == null || questao7 == null || questao8 == null) {
             alert(`Você precisa selecionar todos os campos!!`)
         }
@@ -241,8 +241,9 @@
             divMensagem.style.display = "block";
             divMensagem.innerHTML = `<h3>Resultado:</h3>Você acertou ${pontuacao} de 8 <br><br>
             ${resultado.join('<br> <br>')} `;
+        
         }
-        var incorretas = 8 - pontuacao;
+        var incorretas = qtd_questao - pontuacao;
         
         fetch('/usuarios/analisarQuiz', 
             {method: "POST",
@@ -252,7 +253,7 @@
             body: JSON.stringify({
                 idUsuarioServer: sessionStorage.ID_USUARIO,
                 respostasCorretasServer: pontuacao,
-                respostasIncorretas: incorretas
+                respostasIncorretasServer: incorretas
             })
             }
         )
