@@ -708,7 +708,7 @@ h2 {
 .fundo-aula {
   background-image: url(../assets/imgs/somente_logo.png);
   width: 100%;
-  height: 150vh;
+  height: 300vh;
   position:absolute;
 }
 .fundo-aula .container-aula  {
@@ -716,7 +716,7 @@ h2 {
   margin-left:445px;
   background-color: #d4d8db;
   width: 900px;
-  height: 800px;
+  height: 2000px;
   border-radius: 10px;
   border: #000000 2px solid;
 }
@@ -730,7 +730,7 @@ h2 {
   border: #000000 3px solid;
   border-radius: 20px;
   width: 90%;
-  height: 45%;
+  height: 19%;
   margin-left: 45px;
 }
 .aula1 iframe {
@@ -740,9 +740,109 @@ h2 {
 .aula1 p {
   width: 50%;
   margin-left: 390px;
-  margin-top: -200px;
+  margin-top: -250px;
   text-align: justify;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.aula1 select{
+  width: 140px;
+  height: 40px;
+  padding: 10px;
+  border: 2px solid #000000; 
+  border-radius: 4px;
+  background-color: #d4d8db; 
+  font-size: 16px;
+  color: #000000;
+}
+.aula2{
+  border: #000000 3px solid;
+  border-radius: 20px;
+  width: 90%;
+  height: 19%;
+  margin-left: 45px;
+  margin-top: 70px;
+}
+.aula2 iframe {
+  padding-top: 20px;
+  margin-left:30px;
+}
+.aula2 p {
+  width: 50%;
+  margin-left: 390px;
+  margin-top: -250px;
+  text-align: justify;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.aula2 select{
+  width: 140px;
+  height: 40px;
+  padding: 10px;
+  border: 2px solid #000000; 
+  border-radius: 4px;
+  background-color: #d4d8db; 
+  font-size: 16px;
+  color: #000000;
+}
+
+.aula3{
+  border: #000000 3px solid;
+  border-radius: 20px;
+  width: 90%;
+  height: 19%;
+  margin-left: 45px;
+  margin-top: 70px;
+}
+.aula3 iframe {
+  padding-top: 20px;
+  margin-left:30px;
+}
+.aula3 p {
+  width: 50%;
+  margin-left: 390px;
+  margin-top: -250px;
+  text-align: justify;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.aula3 select{
+  width: 140px;
+  height: 40px;
+  padding: 10px;
+  border: 2px solid #000000; 
+  border-radius: 4px;
+  background-color: #d4d8db; 
+  font-size: 16px;
+  color: #000000;
+}
+
+.aula4{
+  border: #000000 3px solid;
+  border-radius: 20px;
+  width: 90%;
+  height: 19%;
+  margin-left: 45px;
+  margin-top: 70px;
+}
+.aula4 iframe {
+  padding-top: 20px;
+  margin-left:30px;
+}
+.aula4 p {
+  width: 50%;
+  margin-left: 390px;
+  margin-top: -250px;
+  text-align: justify;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.aula4 select{
+  width: 140px;
+  height: 40px;
+  padding: 10px;
+  border: 2px solid #000000; 
+  border-radius: 4px;
+  background-color: #d4d8db; 
+  font-size: 16px;
+  color: #000000;
+  
 }
 
 @keyframes bell {
