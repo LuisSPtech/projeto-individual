@@ -21,4 +21,16 @@ router.get("/graficoQuiz", function (req, res) {
     usuarioController.graficoQuiz(req, res);
 });
 
+router.post("/verificarAula", function (req, res) {
+    usuarioController.verificarAula(req, res);
+});
+router.post("/dadosAula", function (req, res) {
+    usuarioController.dadosAula(req, res);
+});
+router.get("/graficoAula", function (req, res) {
+    usuarioController.graficoAula(req, res);
+});
+
+
+
 module.exports = router;

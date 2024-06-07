@@ -19,12 +19,12 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-  
+
 </head>
 
-<body onload=" exibirQuiz()">
+<body onload="exibirQuiz();exibirVideo()">
 
     <div class="janela">
 
@@ -77,20 +77,88 @@
     function exibirQuiz() {
 
         document.getElementById("graficos").innerHTML += `
-                    <div id="graficos">
+                    <div id="grafico1">
             <h2 class="tituloGraficos">
-                <span id="tituloGrafico" style="color: white;">Aproveitamento do Quiz</span>
+                <span id="tituloGrafico1" style="color: white;">Aproveitamento do Quiz</span>
             </h2>
             <div class="graph">
-                <canvas id="myChartCanvas"></canvas>
+                <canvas id="myChartCanvas1"></canvas>
             </div>
         </div>
                 `
-        obterDadoGrafico();  
+        obterDadoGrafico();
     }
-    function obterDadoGrafico(){
-        console.log(sessionStorage.ID_USUARIO)
+    function obterDadoGrafico() {
         fetch("/usuarios/dadosQuiz/", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            cache: 'no-store',
+            body: JSON.stringify({
+                idUsuarioServer: sessionStorage.ID_USUARIO
+            })
+        }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    plotarGrafico(resposta);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados para o gráfico: ${error.message}`);
+            });
+    }
+
+    function plotarGrafico(resposta) {
+
+        let labels = [""];
+
+        let dados = {
+            labels: ['Acerto', 'Erros'],
+            datasets: [{
+                label: 'Desempenho',
+                data: [resposta[0].respostaCorreta, resposta[0].respostaIncorreta],
+                backgroundColor: ['green', 'red'],
+                // borderColor: 'green',
+                // borderWidth: 1
+            }]
+        }
+    
+
+        // Configuração do gráfico
+        const config = {
+            type: 'pie',
+            data: dados,
+        };
+
+        // Adicionando gráfico criado em div na tela
+        let myChart = new Chart(
+            document.getElementById(`myChartCanvas1`),
+            config
+        );
+
+    };
+
+    function exibirVideo() {
+        document.getElementById("graficos").innerHTML += `
+            <div id="grafico2">
+    <h2 class="tituloGrafico">
+        <span id="tituloGrafico2" style="color: white;">Vídeos Assistidos</span>
+    </h2>
+    <div class="graph">
+        <canvas id="myChartCanvas2"></canvas>
+    </div>
+</div>
+        `
+        obterDadoVideo();
+    }
+
+    function obterDadoVideo() {
+        console.log(sessionStorage.ID_USUARIO)
+        fetch("/usuarios/dadosAula", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -104,7 +172,7 @@
             if (response.ok) {
                 response.json().then(function (resposta) {
                     console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-                    plotarGrafico(resposta);
+                    plotarGraficoVideo(resposta);
                 });
             } else {
                 console.error('Nenhum dado encontrado ou erro na API');
@@ -115,7 +183,8 @@
             });
     }
 
-    function plotarGrafico(resposta) {
+
+    function plotarGraficoVideo(resposta) {
         console.log('Iniciando plotagem do gráfico...');
 
         let labels = [""];
@@ -123,15 +192,15 @@
         let dados = {
             labels: labels,
             datasets: [{
-                label: 'Acertos',
-                data: [resposta[0].respostaCorreta],
+                label: 'Assistidos',
+                data: [resposta[0].videoAssistido],
                 backgroundColor: 'green',
                 borderColor: 'green',
                 borderWidth: 1
             },
             {
-                label: 'Erros',
-                data: [resposta[0].respostaIncorreta],
+                label: 'Não Assistidos',
+                data: [resposta[0].videoNaoAssistido],
                 backgroundColor: 'red',
                 borderColor: 'red',
                 borderWidth: 1
@@ -146,7 +215,7 @@
 
         // Adicionando gráfico criado em div na tela
         let myChart = new Chart(
-            document.getElementById(`myChartCanvas`),
+            document.getElementById(`myChartCanvas2`),
             config
         );
 

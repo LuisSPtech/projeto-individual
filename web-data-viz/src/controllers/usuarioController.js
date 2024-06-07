@@ -127,8 +127,65 @@ function dadosQuiz(req, res) {
         res.status(500).json(erro.sqlMessage);
     });
 }
+
 function graficoQuiz(req, res) {
     usuarioModel.graficoQuiz(idUsuario).then(function (resultado) {
+        var idUsuario = req.body.idUsuarioServer;
+        if (resultado.length > 0) {
+            res.status(200).json(resultado);
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!");
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+        console.log("Houve um erro ao buscar as ultimas medidas.", erro.sqlMessage);
+        res.status(500).json(erro.sqlMessage);
+    });
+}
+
+
+function verificarAula(req, res){
+    var idUsuario = req.body.idUsuarioServer;
+    var videoAssistido = req.body.videoAssistidoServer;
+    var qtd_video = req.body.videoNaoAssistidoServer;
+
+    usuarioModel.verificarAula(videoAssistido, qtd_video,  idUsuario)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+
+}
+
+
+function dadosAula(req, res) {
+    var idUsuario = req.body.idUsuarioServer;
+
+    usuarioModel.dadosAula(idUsuario).then(function (resultado) {
+        if (resultado.length > 0) {
+            res.status(200).json(resultado);
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!");
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+        console.log("Houve um erro ao buscar.", erro.sqlMessage);
+        res.status(500).json(erro.sqlMessage);
+    });
+}
+
+function graficoAula(req, res) {
+    usuarioModel.graficoAula(idUsuario).then(function (resultado) {
         var idUsuario = req.body.idUsuarioServer;
         if (resultado.length > 0) {
             res.status(200).json(resultado);
@@ -147,5 +204,8 @@ module.exports = {
     cadastrar,
     analisarQuiz,
     dadosQuiz,
-    graficoQuiz
+    graficoQuiz,
+    verificarAula,
+    dadosAula,
+    graficoAula
 }
