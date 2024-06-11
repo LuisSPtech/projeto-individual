@@ -72,13 +72,13 @@
 
 
 
-
+        <div class="fundo-quiz">
         <div class="quiz-container">
             <div id="boxquiz">
                 <h2>Conhecimentos básicos de Violoncelo</h2>
                 <br>
                 <div class="questao" data-correct="c">
-                    <p>1. Qual é o instrumento musical que pertence à família das cordasfriccionadas?</p>
+                    <p>1. Qual é o instrumento musical que pertence à família das cordas friccionadas?</p>
                     <label><input type="radio" name="questao1" value="a">A) Piano</label><br>
                     <label><input type="radio" name="questao1" value="b">B) Violão</label><br>
                     <label><input type="radio" name="questao1" value="c">C) Violoncelo<label><br>
@@ -122,7 +122,7 @@
                 </div>
                 <br>
                 <div class="question" data-correct="c">
-                    <p>6. Quem é amplamente considerado como um dos maiores violoncelistas da história da música
+                    <p>6. Qual é o músico considerado como um dos maiores violoncelistas da história da música
                         clássica?</p>
                     <label><input type="radio" name="questao6" value="a">A) Johann Sebastian Bach</label><br>
                     <label><input type="radio" name="questao6" value="b">B) Ludwig van Beethoven</label><br>
@@ -154,7 +154,7 @@
                 <div id="div_mensagem"></div>
             </div>
         </div>
-
+    </div>
 
 
 
@@ -237,7 +237,7 @@
                 resultado.push('8ª pergunta: <span class="incorrect-answer">Incorreta</span>');
             }
             
-            // quizContainer.style.display = "none";
+            
             divMensagem.style.display = "block";
             divMensagem.innerHTML = `<h3>Resultado:</h3>Você acertou ${pontuacao} de 8 <br><br>
             ${resultado.join('<br> <br>')} `;

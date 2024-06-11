@@ -199,6 +199,8 @@ function graficoAula(req, res) {
     });
 }
 
+
+
 module.exports = {
     autenticar,
     cadastrar,
@@ -207,5 +209,6 @@ module.exports = {
     graficoQuiz,
     verificarAula,
     dadosAula,
-    graficoAula
+    graficoAula,
+    
 }
