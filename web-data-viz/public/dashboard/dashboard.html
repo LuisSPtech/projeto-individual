@@ -43,7 +43,7 @@
         <div class="header-left">
             <h1>CelloConnect</h1>
 
-           
+
 
 
             <div class="btn-nav-white">
@@ -72,89 +72,90 @@
 
 
 
-        <div class="fundo-quiz">
-        <div class="quiz-container">
-            <div id="boxquiz">
-                <h2>Conhecimentos básicos de Violoncelo</h2>
-                <br>
-                <div class="questao" data-correct="c">
-                    <p>1. Qual é o instrumento musical que pertence à família das cordas friccionadas?</p>
-                    <label><input type="radio" name="questao1" value="a">A) Piano</label><br>
-                    <label><input type="radio" name="questao1" value="b">B) Violão</label><br>
-                    <label><input type="radio" name="questao1" value="c">C) Violoncelo<label><br>
-                            <label><input type="radio" name="questao1" value="d">D) Flauta</label>
+        <div id="fundoQuiz">
+            <div class="quiz-container">
+                <div id="boxquiz">
+                    <h2>Conhecimentos básicos de Violoncelo</h2>
+                    <br>
+                    <div class="questao" data-correct="c">
+                        <p>1. Qual é o instrumento musical que pertence à família das cordas friccionadas?</p>
+                        <label><input type="radio" name="questao1" value="a">A) Piano</label><br>
+                        <label><input type="radio" name="questao1" value="b">B) Violão</label><br>
+                        <label><input type="radio" name="questao1" value="c">C) Violoncelo<label><br>
+                                <label><input type="radio" name="questao1" value="d">D) Flauta</label>
+                    </div>
+                    <br>
+                    <div class="question" data-correct="a">
+                        <p>2. Quantas cordas tem um violoncelo?</p>
+                        <label><input type="radio" name="questao2" value="a">A) 4</label><br>
+                        <label><input type="radio" name="questao2" value="b">B) 5</label><br>
+                        <label><input type="radio" name="questao2" value="c">C) 6</label><br>
+                        <label><input type="radio" name="questao2" value="d">D) 3</label>
+                    </div>
+                    <br>
+                    <div class="question" data-correct="d">
+                        <p>3. Qual é o nome da peça de metal ou fibra onde o violoncelista apoia o instrumento enquanto
+                            toca?</p>
+                        <label><input type="radio" name="questao3" value="a">A) Apoio</label><br>
+                        <label><input type="radio" name="questao3" value="b">B) Descanso</label><br>
+                        <label><input type="radio" name="questao3" value="c">C) Estribo</label><br>
+                        <label><input type="radio" name="questao3" value="d">D) Espigão</label>
+                    </div>
+                    <br>
+                    <div class="question" data-correct="a">
+                        <p>4. Qual é o intervalo de afinação padrão das cordas de um violoncelo?</p>
+                        <label><input type="radio" name="questao4" value="a">A) Dó - Sol - Ré - Lá</label><br>
+                        <label><input type="radio" name="questao4" value="b">B) Ré - Sol - Dó - Fá</label><br>
+                        <label><input type="radio" name="questao4" value="c">C) Sol - Ré - Lá - Mi</label><br>
+                        <label><input type="radio" name="questao4" value="d">D) Lá - Mi - Si - Fá</label>
+                    </div>
+                    <br>
+                    <div class="question" data-correct="b">
+                        <p>5. Qual é a posição padrão de segurar o violoncelo enquanto tocando?</p>
+                        <label><input type="radio" name="questao5" value="a">A) De pé com o violoncelo em um
+                            suporte</label><br>
+                        <label><input type="radio" name="questao5" value="b">B) Sentado com o violoncelo entre as
+                            pernas</label><br>
+                        <label><input type="radio" name="questao5" value="c">C) Segurando o violoncelo como uma
+                            guitarra</label><br>
+                        <label><input type="radio" name="questao5" value="d">D) Balançando o violoncelo no ar</label>
+                    </div>
+                    <br>
+                    <div class="question" data-correct="c">
+                        <p>6. Qual é o músico considerado como um dos maiores violoncelistas da história da música
+                            clássica?</p>
+                        <label><input type="radio" name="questao6" value="a">A) Johann Sebastian Bach</label><br>
+                        <label><input type="radio" name="questao6" value="b">B) Ludwig van Beethoven</label><br>
+                        <label><input type="radio" name="questao6" value="c">C) Yo-Yo Ma</label><br>
+                        <label><input type="radio" name="questao6" value="d">D) Wolfgang Amadeus Mozart</label>
+                    </div>
+                    <br>
+                    <div class="question" data-correct="d">
+                        <p>7. Qual é a técnica usada para produzir um som mais suave no violoncelo, geralmente indicada
+                            por
+                            tocar as cordas com os dedos?</p>
+                        <label><input type="radio" name="questao7" value="a">A) Legato</label><br>
+                        <label><input type="radio" name="questao7" value="b">B) Arco</label><br>
+                        <label><input type="radio" name="questao7" value="c">C) Staccato</label><br>
+                        <label><input type="radio" name="questao7" value="d">D) Pizzicato</label>
+                    </div>
+                    <br>
+                    <div class="question" data-correct="b">
+                        <p>8. Quem é considerado um dos compositores mais famosos de peças para violoncelo?</p>
+                        <label><input type="radio" name="questao8" value="a">A) Wolfgang Amadeus Mozart </label><br>
+                        <label><input type="radio" name="questao8" value="b">B) Johann Sebastian Bach</label><br>
+                        <label><input type="radio" name="questao8" value="c">C) Ludwig van Beethoven</label><br>
+                        <label><input type="radio" name="questao8" value="d">D) Frédéric Chopin</label>
+                    </div>
+                    <a href="#div_mensagem">
+                        <button onclick="analisarQuiz()">Enviar</button>
+                    </a>
                 </div>
-                <br>
-                <div class="question" data-correct="a">
-                    <p>2. Quantas cordas tem um violoncelo?</p>
-                    <label><input type="radio" name="questao2" value="a">A) 4</label><br>
-                    <label><input type="radio" name="questao2" value="b">B) 5</label><br>
-                    <label><input type="radio" name="questao2" value="c">C) 6</label><br>
-                    <label><input type="radio" name="questao2" value="d">D) 3</label>
+                <div id="resultadoquiz">
+                    <div id="div_mensagem"></div>
                 </div>
-                <br>
-                <div class="question" data-correct="d">
-                    <p>3. Qual é o nome da peça de metal ou fibra onde o violoncelista apoia o instrumento enquanto
-                        toca?</p>
-                    <label><input type="radio" name="questao3" value="a">A) Apoio</label><br>
-                    <label><input type="radio" name="questao3" value="b">B) Descanso</label><br>
-                    <label><input type="radio" name="questao3" value="c">C) Estribo</label><br>
-                    <label><input type="radio" name="questao3" value="d">D) Espigão</label>
-                </div>
-                <br>
-                <div class="question" data-correct="a">
-                    <p>4. Qual é o intervalo de afinação padrão das cordas de um violoncelo?</p>
-                    <label><input type="radio" name="questao4" value="a">A) Dó - Sol - Ré - Lá</label><br>
-                    <label><input type="radio" name="questao4" value="b">B) Ré - Sol - Dó - Fá</label><br>
-                    <label><input type="radio" name="questao4" value="c">C) Sol - Ré - Lá - Mi</label><br>
-                    <label><input type="radio" name="questao4" value="d">D) Lá - Mi - Si - Fá</label>
-                </div>
-                <br>
-                <div class="question" data-correct="b">
-                    <p>5. Qual é a posição padrão de segurar o violoncelo enquanto tocando?</p>
-                    <label><input type="radio" name="questao5" value="a">A) De pé com o violoncelo em um
-                        suporte</label><br>
-                    <label><input type="radio" name="questao5" value="b">B) Sentado com o violoncelo entre as
-                        pernas</label><br>
-                    <label><input type="radio" name="questao5" value="c">C) Segurando o violoncelo como uma
-                        guitarra</label><br>
-                    <label><input type="radio" name="questao5" value="d">D) Balançando o violoncelo no ar</label>
-                </div>
-                <br>
-                <div class="question" data-correct="c">
-                    <p>6. Qual é o músico considerado como um dos maiores violoncelistas da história da música
-                        clássica?</p>
-                    <label><input type="radio" name="questao6" value="a">A) Johann Sebastian Bach</label><br>
-                    <label><input type="radio" name="questao6" value="b">B) Ludwig van Beethoven</label><br>
-                    <label><input type="radio" name="questao6" value="c">C) Yo-Yo Ma</label><br>
-                    <label><input type="radio" name="questao6" value="d">D) Wolfgang Amadeus Mozart</label>
-                </div>
-                <br>
-                <div class="question" data-correct="d">
-                    <p>7. Qual é a técnica usada para produzir um som mais suave no violoncelo, geralmente indicada por
-                        tocar as cordas com os dedos?</p>
-                    <label><input type="radio" name="questao7" value="a">A) Legato</label><br>
-                    <label><input type="radio" name="questao7" value="b">B) Arco</label><br>
-                    <label><input type="radio" name="questao7" value="c">C) Staccato</label><br>
-                    <label><input type="radio" name="questao7" value="d">D) Pizzicato</label>
-                </div>
-                <br>
-                <div class="question" data-correct="b">
-                    <p>8. Quem é considerado um dos compositores mais famosos de peças para violoncelo?</p>
-                    <label><input type="radio" name="questao8" value="a">A) Wolfgang Amadeus Mozart </label><br>
-                    <label><input type="radio" name="questao8" value="b">B) Johann Sebastian Bach</label><br>
-                    <label><input type="radio" name="questao8" value="c">C) Ludwig van Beethoven</label><br>
-                    <label><input type="radio" name="questao8" value="d">D) Frédéric Chopin</label>
-                </div>
-
-                <button onclick="analisarQuiz()">Enviar</button>
-
-            </div>
-            <div id="resultadoquiz">
-                <div id="div_mensagem"></div>
             </div>
         </div>
-    </div>
 
 
 
@@ -168,7 +169,7 @@
     function analisarQuiz() {
         var divMensagem = document.getElementById('div_mensagem');
         var quizContainer = document.querySelector('.quiz-container');
-       
+
         var questao1 = document.querySelector('[name="questao1"]:checked');
         var questao2 = document.querySelector('[name="questao2"]:checked');
         var questao3 = document.querySelector('[name="questao3"]:checked');
@@ -236,25 +237,29 @@
             } else {
                 resultado.push('8ª pergunta: <span class="incorrect-answer">Incorreta</span>');
             }
-            
-            
+
+
             divMensagem.style.display = "block";
             divMensagem.innerHTML = `<h3>Resultado:</h3>Você acertou ${pontuacao} de 8 <br><br>
             ${resultado.join('<br> <br>')} `;
-        
+
+            if (divMensagem.style.display == "block") {
+                fundoQuiz.style.height = '200vh';
+            }
         }
         var incorretas = qtd_questao - pontuacao;
-        
-        fetch('/usuarios/analisarQuiz', 
-            {method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                idUsuarioServer: sessionStorage.ID_USUARIO,
-                respostasCorretasServer: pontuacao,
-                respostasIncorretasServer: incorretas
-            })
+
+        fetch('/usuarios/analisarQuiz',
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    idUsuarioServer: sessionStorage.ID_USUARIO,
+                    respostasCorretasServer: pontuacao,
+                    respostasIncorretasServer: incorretas
+                })
             }
         )
 
