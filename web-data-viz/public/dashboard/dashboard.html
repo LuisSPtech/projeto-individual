@@ -178,7 +178,7 @@
         var questao7 = document.querySelector('[name="questao7"]:checked');
         var questao8 = document.querySelector('[name="questao8"]:checked');
         const qtd_questao = Number(8);
-        
+
         if (questao1 == null || questao2 == null || questao3 == null || questao4 == null || questao5 == null || questao6 == null || questao7 == null || questao8 == null) {
             alert(`Você precisa selecionar todos os campos!!`)
         }
@@ -188,6 +188,8 @@
             var resultado = [];
 
             div_mensagem.innerHTML = '';
+            
+            //Tirando redundância do JS no dia 21/06
             
             if (questao1.value == 'c') {
                 pontuacao++;
