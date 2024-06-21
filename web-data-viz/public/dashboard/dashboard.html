@@ -77,15 +77,15 @@
                 <div id="boxquiz">
                     <h2>Conhecimentos básicos de Violoncelo</h2>
                     <br>
-                    <div class="questao" data-correct="c">
+                    <div>
                         <p>1. Qual é o instrumento musical que pertence à família das cordas friccionadas?</p>
                         <label><input type="radio" name="questao1" value="a">A) Piano</label><br>
                         <label><input type="radio" name="questao1" value="b">B) Violão</label><br>
                         <label><input type="radio" name="questao1" value="c">C) Violoncelo<label><br>
-                                <label><input type="radio" name="questao1" value="d">D) Flauta</label>
+                        <label><input type="radio" name="questao1" value="d">D) Flauta</label>
                     </div>
                     <br>
-                    <div class="question" data-correct="a">
+                    <div>
                         <p>2. Quantas cordas tem um violoncelo?</p>
                         <label><input type="radio" name="questao2" value="a">A) 4</label><br>
                         <label><input type="radio" name="questao2" value="b">B) 5</label><br>
@@ -93,7 +93,7 @@
                         <label><input type="radio" name="questao2" value="d">D) 3</label>
                     </div>
                     <br>
-                    <div class="question" data-correct="d">
+                    <div>
                         <p>3. Qual é o nome da peça de metal ou fibra onde o violoncelista apoia o instrumento enquanto
                             toca?</p>
                         <label><input type="radio" name="questao3" value="a">A) Apoio</label><br>
@@ -102,7 +102,7 @@
                         <label><input type="radio" name="questao3" value="d">D) Espigão</label>
                     </div>
                     <br>
-                    <div class="question" data-correct="a">
+                    <div>
                         <p>4. Qual é o intervalo de afinação padrão das cordas de um violoncelo?</p>
                         <label><input type="radio" name="questao4" value="a">A) Dó - Sol - Ré - Lá</label><br>
                         <label><input type="radio" name="questao4" value="b">B) Ré - Sol - Dó - Fá</label><br>
@@ -110,7 +110,7 @@
                         <label><input type="radio" name="questao4" value="d">D) Lá - Mi - Si - Fá</label>
                     </div>
                     <br>
-                    <div class="question" data-correct="b">
+                    <div>
                         <p>5. Qual é a posição padrão de segurar o violoncelo enquanto tocando?</p>
                         <label><input type="radio" name="questao5" value="a">A) De pé com o violoncelo em um
                             suporte</label><br>
@@ -121,7 +121,7 @@
                         <label><input type="radio" name="questao5" value="d">D) Balançando o violoncelo no ar</label>
                     </div>
                     <br>
-                    <div class="question" data-correct="c">
+                    <div>
                         <p>6. Qual é o músico considerado como um dos maiores violoncelistas da história da música
                             clássica?</p>
                         <label><input type="radio" name="questao6" value="a">A) Johann Sebastian Bach</label><br>
@@ -130,7 +130,7 @@
                         <label><input type="radio" name="questao6" value="d">D) Wolfgang Amadeus Mozart</label>
                     </div>
                     <br>
-                    <div class="question" data-correct="d">
+                    <div>
                         <p>7. Qual é a técnica usada para produzir um som mais suave no violoncelo, geralmente indicada
                             por
                             tocar as cordas com os dedos?</p>
@@ -140,7 +140,7 @@
                         <label><input type="radio" name="questao7" value="d">D) Pizzicato</label>
                     </div>
                     <br>
-                    <div class="question" data-correct="b">
+                    <div>
                         <p>8. Quem é considerado um dos compositores mais famosos de peças para violoncelo?</p>
                         <label><input type="radio" name="questao8" value="a">A) Wolfgang Amadeus Mozart </label><br>
                         <label><input type="radio" name="questao8" value="b">B) Johann Sebastian Bach</label><br>
@@ -168,7 +168,6 @@
 <script>
     function analisarQuiz() {
         var divMensagem = document.getElementById('div_mensagem');
-        var quizContainer = document.querySelector('.quiz-container');
 
         var questao1 = document.querySelector('[name="questao1"]:checked');
         var questao2 = document.querySelector('[name="questao2"]:checked');
@@ -179,6 +178,7 @@
         var questao7 = document.querySelector('[name="questao7"]:checked');
         var questao8 = document.querySelector('[name="questao8"]:checked');
         const qtd_questao = Number(8);
+        
         if (questao1 == null || questao2 == null || questao3 == null || questao4 == null || questao5 == null || questao6 == null || questao7 == null || questao8 == null) {
             alert(`Você precisa selecionar todos os campos!!`)
         }
@@ -186,56 +186,58 @@
             boxquiz.style.display = "none"
             var pontuacao = 0;
             var resultado = [];
+
             div_mensagem.innerHTML = '';
-            if (questao1 && questao1.value == 'c') {
+            
+            if (questao1.value == 'c') {
                 pontuacao++;
-                resultado.push('1ª pergunta: <span class="correct-answer">Correta</span>');
+                resultado.push('1ª pergunta: <span>Correta</span>');
             } else {
-                resultado.push('1ª pergunta: <span class="incorrect-answer">Incorreta</span>');
+                resultado.push('1ª pergunta: <span>Incorreta</span>');
             }
 
-            if (questao2 && questao2.value === 'a') {
+            if (questao2.value == 'a') {
                 pontuacao++;
-                resultado.push('2ª pergunta: <span class="correct-answer">Correta</span>');
+                resultado.push('2ª pergunta: <span>Correta</span>');
             } else {
-                resultado.push('2ª pergunta: <span class="incorrect-answer">Incorreta</span>');
+                resultado.push('2ª pergunta: <span>Incorreta</span>');
             }
 
-            if (questao3 && questao3.value === 'd') {
+            if (questao3.value == 'd') {
                 pontuacao++;
-                resultado.push('3ª pergunta: <span class="correct-answer">Correta</span>');
+                resultado.push('3ª pergunta: <span>Correta</span>');
             } else {
-                resultado.push('3ª pergunta: <span class="incorrect-answer">Incorreta</span>');
+                resultado.push('3ª pergunta: <span>Incorreta</span>');
             }
-            if (questao4 && questao4.value == 'a') {
+            if (questao4.value == 'a') {
                 pontuacao++;
-                resultado.push('4ª pergunta: <span class="correct-answer">Correta</span>');
+                resultado.push('4ª pergunta: <span>Correta</span>');
             } else {
-                resultado.push('4ª pergunta: <span class="incorrect-answer">Incorreta</span>');
+                resultado.push('4ª pergunta: <span>Incorreta</span>');
             }
-            if (questao5 && questao5.value == 'b') {
+            if (questao5.value == 'b') {
                 pontuacao++;
-                resultado.push('5ª pergunta: <span class="correct-answer">Correta</span>');
+                resultado.push('5ª pergunta: <span>Correta</span>');
             } else {
-                resultado.push('5ª pergunta: <span class="incorrect-answer">Incorreta</span>');
+                resultado.push('5ª pergunta: <span>Incorreta</span>');
             }
-            if (questao6 && questao6.value == 'c') {
+            if (questao6.value == 'c') {
                 pontuacao++;
-                resultado.push('6ª pergunta: <span class="correct-answer">Correta</span>');
+                resultado.push('6ª pergunta: <span>Correta</span>');
             } else {
-                resultado.push('6ª pergunta: <span class="incorrect-answer">Incorreta</span>');
+                resultado.push('6ª pergunta: <span>Incorreta</span>');
             }
-            if (questao7 && questao7.value == 'd') {
+            if (questao7.value == 'd') {
                 pontuacao++;
-                resultado.push('7ª pergunta: <span class="correct-answer">Correta</span>');
+                resultado.push('7ª pergunta: <span>Correta</span>');
             } else {
-                resultado.push('7ª pergunta: <span class="incorrect-answer">Incorreta</span>');
+                resultado.push('7ª pergunta: <span>Incorreta</span>');
             }
-            if (questao8 && questao8.value == 'b') {
+            if (questao8.value == 'b') {
                 pontuacao++;
-                resultado.push('8ª pergunta: <span class="correct-answer">Correta</span>');
+                resultado.push('8ª pergunta: <span>Correta</span>');
             } else {
-                resultado.push('8ª pergunta: <span class="incorrect-answer">Incorreta</span>');
+                resultado.push('8ª pergunta: <span>Incorreta</span>');
             }
 
 
