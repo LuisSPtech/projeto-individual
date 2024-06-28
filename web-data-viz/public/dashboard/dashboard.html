@@ -158,8 +158,8 @@
         </div>
 
 
-
-
+<style style="color: green;"></style>
+<b></b>
 
 </body>
 
@@ -186,66 +186,72 @@
             boxquiz.style.display = "none"
             var pontuacao = 0;
             var resultado = [];
-
+            
             div_mensagem.innerHTML = '';
             
             //Tirando redundância do JS no dia 21/06
             
             if (questao1.value == 'c') {
                 pontuacao++;
-                resultado.push('1ª pergunta: <span>Correta</span>');
+                resultado.push('<b>1ª pergunta:</b> <i>Correta</i>');
             } else {
-                resultado.push('1ª pergunta: <span>Incorreta</span>');
+                resultado.push('<b>1ª pergunta:</b> <i>Incorreta</i>');
             }
 
             if (questao2.value == 'a') {
                 pontuacao++;
-                resultado.push('2ª pergunta: <span>Correta</span>');
+                resultado.push('<b>2ª pergunta:</b> <i>Correta</i>');
             } else {
-                resultado.push('2ª pergunta: <span>Incorreta</span>');
+                resultado.push('<b>2ª pergunta:</b> <i>Incorreta</i>');
             }
 
             if (questao3.value == 'd') {
                 pontuacao++;
-                resultado.push('3ª pergunta: <span>Correta</span>');
+                resultado.push('<b>3ª pergunta:</b> <i>Correta</i>');
             } else {
-                resultado.push('3ª pergunta: <span>Incorreta</span>');
+                resultado.push('<b>3ª pergunta:</b> <i>Incorreta</i>');
             }
             if (questao4.value == 'a') {
                 pontuacao++;
-                resultado.push('4ª pergunta: <span>Correta</span>');
+                resultado.push('<b>4ª pergunta:</b> <i>Correta</i>');
             } else {
-                resultado.push('4ª pergunta: <span>Incorreta</span>');
+                resultado.push('<b>4ª pergunta:</b> <i>Incorreta</i>');
             }
             if (questao5.value == 'b') {
                 pontuacao++;
-                resultado.push('5ª pergunta: <span>Correta</span>');
+                resultado.push('<b>5ª pergunta:</b> <i>Correta</i>');
             } else {
-                resultado.push('5ª pergunta: <span>Incorreta</span>');
+                resultado.push('<b>5ª pergunta:</b> <i>Incorreta</i>');
             }
             if (questao6.value == 'c') {
                 pontuacao++;
-                resultado.push('6ª pergunta: <span>Correta</span>');
+                resultado.push('<b>6ª pergunta:</b> <i>Correta</i>');
             } else {
-                resultado.push('6ª pergunta: <span>Incorreta</span>');
+                resultado.push('<b>6ª pergunta:</b> <i>Incorreta</i>');
             }
             if (questao7.value == 'd') {
                 pontuacao++;
-                resultado.push('7ª pergunta: <span>Correta</span>');
+                resultado.push('<b>7ª pergunta:</b> <i>Correta</i>');
             } else {
-                resultado.push('7ª pergunta: <span>Incorreta</span>');
+                resultado.push('<b>7ª pergunta:</b> <i>Incorreta</i>');
             }
             if (questao8.value == 'b') {
                 pontuacao++;
-                resultado.push('8ª pergunta: <span>Correta</span>');
+                resultado.push('<b>8ª pergunta:</b> <i>Correta</i>');
             } else {
-                resultado.push('8ª pergunta: <span>Incorreta</span>');
+                resultado.push('<b>8ª pergunta:</b> <i>Incorreta</i>');
             }
+            
+            // DIa 27/06 foi implementado a métrica de porcentagem 
+
+            var porcentagem = (pontuacao / 8) * 100
 
 
             divMensagem.style.display = "block";
-            divMensagem.innerHTML = `<h3>Resultado:</h3>Você acertou ${pontuacao} de 8 <br><br>
-            ${resultado.join('<br> <br>')} `;
+            divMensagem.innerHTML = `<h3>Resultado:</h3>Você acertou <b>${pontuacao}</b> de <b>8</b> <br><br>
+            ${resultado.join('<br> <br>')} <br> <br>
+            <h3><b>Segundo a quantidade total de questões, você acertou:</b> <b><i>${porcentagem}%</i></b></h3>`;
+           
 
             if (divMensagem.style.display == "block") {
                 fundoQuiz.style.height = '200vh';
