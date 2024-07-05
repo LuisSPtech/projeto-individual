@@ -149,19 +149,28 @@ let naoAssistidos = 0
         var aula2 = select_aula2.value;
         var aula3 = select_aula3.value;
         var aula4 = select_aula4.value;
+        var video1 = 0;
+        var video2 = 0;
+        var video3 = 0;
+        var video4 = 0;
         var videoAssistido = 0;
         var qtd_video = 4;
+//Começo da alteração e aprimoramento do JavaScript 05/07
         if (aula1 == '2') {
+            video1 = 1;
             videoAssistido++;
             qtd_video--;
         }
         if (aula2 == '2') {
+            video2 = 1;
             videoAssistido++; -
                 qtd_video--;
         } if (aula3 == '2') {
+            video3 = 1;
             videoAssistido++;
             qtd_video--;
         } if (aula4 == '2') {
+            video4 = 1;
             videoAssistido++;
             qtd_video--;
         }
@@ -176,7 +185,11 @@ let naoAssistidos = 0
                 body: JSON.stringify({
                     idUsuarioServer: sessionStorage.ID_USUARIO,
                     videoAssistidoServer: videoAssistido,
-                    videoNaoAssistidoServer: qtd_video
+                    videoNaoAssistidoServer: qtd_video,
+                    video01Server: video1,
+                    video02Server: video2,
+                    video03Server: video3,
+                    video04Server: video4,
                 })
             }
         )
