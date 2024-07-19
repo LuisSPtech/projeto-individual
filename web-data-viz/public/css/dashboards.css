@@ -332,12 +332,12 @@ canvas {
   /* width: 100vw; */
 }
 
-.header-left a {
+.titulo-menu a {
   text-decoration: none;
   color: rgb(255, 255, 255);
 }
 
-.header-left {
+.titulo-menu {
   position: fixed;
   top: 0;
   left: 0;
@@ -364,7 +364,7 @@ canvas {
   overflow: auto;
 }
 
-.header-left h1 {
+.titulo-menu h1 {
   color: #ffffff;
 }
 
@@ -395,7 +395,7 @@ canvas {
   padding: 2% 5%;
 }
 
-.btn-nav-white {
+.botao-menu {
   width: 40%;
   background-color: white;
   border: 3px solid #020202;
@@ -404,19 +404,19 @@ canvas {
   padding: 2% 5%;
 }
 
-.btn-nav-white h3 {
+.botao-menu h3 {
   color: #000000;
   padding: 0;
   margin: 0;
 }
 
 .btn-nav h3,
-.btn-logout h3 {
+.botao-sair h3 {
   margin: 0;
   padding: 0;
 }
 
-.btn-logout {
+.botao-sair {
   margin: 0;
   padding: 0;
   width: 20%;

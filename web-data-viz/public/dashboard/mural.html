@@ -24,18 +24,18 @@
     <div class="janela">
 
 
-        <div class="header-left">
+        <div class="titulo-menu">
 
             <h1>CelloConnect</h1>
 
 
-            <div class="btn-nav-white">
+            <div class="botao-menu">
                 <a href="cards.html">
                     <h3>Gráficos</h3>
                 </a>
             </div>
 
-            <div class="btn-nav-white">
+            <div class="botao-menu">
                 <a href="./dashboard.html">
                     <h3>Quiz</h3>
                 </a>
@@ -45,7 +45,13 @@
                 <h3>Aulas</h3>
             </div>
 
-            <div class="btn-logout" onclick="limparSessao()">
+            <div class="botao-menu">
+                <a href="./dashboard.html">
+                    <h3>Ranking</h3>
+                </a>
+            </div>
+
+            <div class="botao-sair" onclick="limparSessao()">
                 <h3>Sair</h3>
             </div>
 
@@ -175,7 +181,7 @@ let naoAssistidos = 0
             qtd_video--;
         }
 
-
+        //Dia 12/07 fazendo alterações para conectar com o banco de dados
         fetch('/usuarios/verificarAula',
             {
                 method: "POST",
