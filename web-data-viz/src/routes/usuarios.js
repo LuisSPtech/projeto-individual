@@ -30,6 +30,9 @@ router.post("/dadosAula", function (req, res) {
 router.get("/graficoAula", function (req, res) {
     usuarioController.graficoAula(req, res);
 });
+router.get("/rankingquiz", function (req, res) {
+    usuarioController.rankingquiz(req, res);
+});
 
 
 

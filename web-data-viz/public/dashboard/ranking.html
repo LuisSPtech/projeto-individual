@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="shortcut icon" href="../assets/icon/favicon2.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cello Connect | Ranking</title>
+
+
+    <link rel="stylesheet" href="./../css/dashboards.css">
+    <link rel="stylesheet" href="./../css/estilo.css" />
+
+    <script src="../js/sessao.js"></script>
+    <script src="../js/alerta.js"></script>
+    <link rel="icon" href="../css/imgs/somente_logo.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+</head>
+
+<body>
+
+    <div class="janela">
+
+        <div class="titulo-menu dash-header">
+
+            <h1>CelloConnect</h1>
+
+            <div class="btn-nav">
+                <h3>Gráficos</h3>
+            </div>
+
+            <div class="botao-menu">
+                <a href="./dashboard.html">
+                    <h3>Quiz</h3>
+                </a>
+            </div>
+
+            <div class="botao-menu">
+                <a href="./mural.html">
+                    <h3>Aulas</h3>
+                </a>
+            </div>
+
+         <!-- 19/07 Adicionando a página ranking  -->
+            <div class="botao-menu">
+                
+                    <h3>Ranking</h3>
+              
+            </div>
+
+            <div class="botao-sair" onclick="limparSessao()">
+                <h3>Sair</h3>
+            </div>
+
+        </div>
+
+        <div class="dash">
+
+            <div class="ranking">
+                <div class="sessao-ranking">
+                    <h1>Ranking Geral Quiz</h1>
+                    <div class="bloco-ranking" id="bloco_ranking2">
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+<script>
+
+puxar_ranking();
+
+    function puxar_ranking() { 
+        fetch(`/usuarios/rankingquiz/`,{ cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+                    formacao_ranking(resposta);
+                });
+            } else {
+                console.error('erro na obtenção');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados para o ranking: ${error.message}`);
+            });
+    }
+
+    function formacao_ranking(resposta) { 
+        for(var index = 0; index < resposta.length; index++) { 
+            var ranking_ordenado = resposta[index]; 
+            bloco_ranking2.innerHTML += `<h2> <span> ${index + 1}º ${ranking_ordenado.nome} - ${ranking_ordenado.RespostasCorretas} pontos </span> </h3>`
+        }
+    }
+
+
+
+
+</script>

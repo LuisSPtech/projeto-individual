@@ -94,6 +94,19 @@ function graficoAula(idUsuario) {
     return database.executar(instrucaoSql);
 }
 
+function rankingquiz() {
+    
+    // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
+    //  e na ordem de inserção dos dados.
+    var instrucaoSql = `
+SELECT u.nome, MAX(f.respostaCorreta) AS RespostasCorretas 
+FROM formulario f JOIN usuario u ON f.fkUsuario = u.idUsuario GROUP BY u.idUsuario, u.nome ORDER BY RespostasCorretas LIMIT 5;`
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+
+
 
 module.exports = {
     autenticar,
@@ -103,5 +116,6 @@ module.exports = {
     graficoQuiz,
     verificarAula,
     dadosAula,
-    graficoAula
+    graficoAula,
+    rankingquiz
 };
