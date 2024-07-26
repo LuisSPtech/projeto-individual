@@ -65,7 +65,7 @@
 
             <div class="ranking">
                 <div class="sessao-ranking">
-                    <h1>Ranking Geral Quiz</h1>
+                    <h1>Ranking Geral - Quiz</h1>
                     <div class="bloco-ranking" id="bloco_ranking2">
 
                     </div>
@@ -80,7 +80,8 @@
 </body>
 
 <script>
-
+//Fazendo o script do ranking 26/07
+//Fazendo o CSS do ranking 27/07
 puxar_ranking();
 
     function puxar_ranking() { 
@@ -101,10 +102,27 @@ puxar_ranking();
     }
 
     function formacao_ranking(resposta) { 
-        for(var index = 0; index < resposta.length; index++) { 
-            var ranking_ordenado = resposta[index]; 
-            bloco_ranking2.innerHTML += `<h2> <span> ${index + 1}º ${ranking_ordenado.nome} - ${ranking_ordenado.RespostasCorretas} pontos </span> </h3>`
-        }
+        for (var index = 0; index < resposta.length; index++) 
+        { 
+        var ranking_ordenado = resposta[index]; 
+        var classe = ' ';
+        var medalha= ' ';
+
+        if (index == 0) {
+        classe = 'dourado';
+        medalha = '../css/imgs/ouro.png';
+        }   else if (index == 1) {
+            classe = 'prata';
+            medalha = '../css/imgs/prata.png';
+        }   else if (index == 2) {
+        classe = 'bronze';
+        medalha = '../css/imgs/bronze.png';
+        }   else {
+        classe = 'normal';
+        medalha = '../css/imgs/verificado.png';
+    }
+    bloco_ranking2.innerHTML += `<h3><span class="${classe}"><img src="${medalha}" class="medalha"> ${index + 1}º lugar</span><b class = "nome"> - ${ranking_ordenado.nome} - ${ranking_ordenado.RespostasCorretas} pontos</b> </h3>`;
+}
     }
 
 

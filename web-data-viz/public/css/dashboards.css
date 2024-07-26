@@ -429,3 +429,59 @@ canvas {
   cursor: pointer;
   border: #000000 3px solid;
 }
+
+.ranking{
+background-image: url(../css/imgs/somente_logo.png);
+padding-top: 10px;
+height: 100vh;
+}
+
+.sessao-ranking{
+  background-color: #262323;
+  border-radius: 10px;
+  width: 600px;
+  height: 450px;
+  margin: auto;
+  margin-top: 50px;
+  border: #000000 2px solid;
+}
+
+.sessao-ranking h1{
+  text-align: center;
+  color: white;
+}
+
+.sessao-ranking span{
+  margin-left:60px;
+}
+
+.dourado {
+  color: gold;
+}
+
+.prata {
+  color: silver;
+}
+
+.bronze {
+  color: #cd7f32;
+}
+
+.normal{
+  color: white;
+}
+.medalha {
+  width: 50px; 
+  height: 50px;
+  vertical-align: middle; 
+  margin-right: 5px; 
+}
+
+.nome{
+  color: white;
+  
+}
+
+
+
+
