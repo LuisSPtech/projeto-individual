@@ -57,13 +57,13 @@ function graficoQuiz(idUsuario) {
 }
 
 
-function verificarAula(videoAssistido, qtd_video, video1, video2, video3, video4, idUsuario ) {
+function verificarAula(videoAssistido, qtd_video, idUsuario ) {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function verificarAula():", videoAssistido, qtd_video, idUsuario);
     
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucaoSql = `
-        INSERT INTO video (videoAssistido, videoNaoAssistido, video1, video2, video3, video4, fkUsuario) VALUES (${videoAssistido}, ${qtd_video}, ${video1}, ${video2}, ${video3}, ${video4}, ${idUsuario});
+        INSERT INTO video (videoAssistido, videoNaoAssistido, fkUsuario) VALUES (${videoAssistido}, ${qtd_video}, ${idUsuario});
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
@@ -95,9 +95,6 @@ function graficoAula(idUsuario) {
 }
 
 function rankingquiz() {
-    
-    // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
-    //  e na ordem de inserção dos dados.
     var instrucaoSql = `
 SELECT u.nome, MAX(f.respostaCorreta) AS RespostasCorretas 
 FROM formulario f JOIN usuario u ON f.fkUsuario = u.idUsuario GROUP BY u.idUsuario, u.nome ORDER BY RespostasCorretas LIMIT 5;`

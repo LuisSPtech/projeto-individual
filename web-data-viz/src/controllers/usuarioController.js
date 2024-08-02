@@ -148,12 +148,8 @@ function verificarAula(req, res){
     var idUsuario = req.body.idUsuarioServer;
     var videoAssistido = req.body.videoAssistidoServer;
     var qtd_video = req.body.videoNaoAssistidoServer;
-    var video1 = req.body.video01Server;
-    var video2 = req.body.video02Server;
-    var video3 = req.body.video03Server;
-    var video4 = req.body.video04Server;
 
-    usuarioModel.verificarAula(videoAssistido, qtd_video,  idUsuario, video1, video2, video3, video4)
+    usuarioModel.verificarAula(videoAssistido, qtd_video,  idUsuario)
             .then(
                 function (resultado) {
                     res.json(resultado);
