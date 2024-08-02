@@ -26,13 +26,9 @@ create table video(
 idVideo int primary key auto_increment,
 videoAssistido int,
 videoNaoAssistido int,
-video1 varchar(20),
-video2 varchar(20),
-video3 varchar(20),
-video4 varchar(20),
 fkUsuario int,
 foreign key (fkUsuario) references usuario (idUsuario)
 );
 
-
+select * from usuario;
 
