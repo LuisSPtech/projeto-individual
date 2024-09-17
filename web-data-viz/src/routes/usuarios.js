@@ -21,20 +21,21 @@ router.get("/graficoQuiz", function (req, res) {
     usuarioController.graficoQuiz(req, res);
 });
 
+//Método fetch que enviou os dados da aula
 router.post("/verificarAula", function (req, res) {
     usuarioController.verificarAula(req, res);
 });
+
+//Obter dados da aula
 router.post("/dadosAula", function (req, res) {
     usuarioController.dadosAula(req, res);
 });
+//Busca no Banco de Dados para obter os dados do gráfico
 router.get("/graficoAula", function (req, res) {
     usuarioController.graficoAula(req, res);
 });
 router.get("/rankingquiz", function (req, res) {
     usuarioController.rankingquiz(req, res);
 });
-
-
-
 
 module.exports = router;

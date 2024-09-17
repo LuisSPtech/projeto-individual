@@ -183,7 +183,7 @@ function dadosAula(req, res) {
         res.status(500).json(erro.sqlMessage);
     });
 }
-
+//Consulta no Banco de Dados para obter os dados do gráfico
 function graficoAula(req, res) {
     usuarioModel.graficoAula(idUsuario).then(function (resultado) {
         var idUsuario = req.body.idUsuarioServer;
